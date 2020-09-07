@@ -92,6 +92,10 @@ install:
     - clean_code $REPO_DIR $BUILD_COMMIT
     - ./patch_code.sh $REPO_DIR
     - build_wheel $REPO_DIR $PLAT
+    - cd wheelhouse
+    - unzip ./*whl
+    - readelf -l ./numpy/core/_multiarray_umath.cpython-36m-aarch64-linux-gnu.so
+    - cd ..
 
 script:
     - install_run $PLAT
