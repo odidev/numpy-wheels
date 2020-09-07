@@ -9,6 +9,7 @@ function build_wheel {
     if [ -n "$IS_OSX" ]; then
         install_gfortran
     fi
+    yum install unzip -y
     echo gcc --version
     echo `gcc --version`
     build_libs $lib_plat
